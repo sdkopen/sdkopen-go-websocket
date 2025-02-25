@@ -1,4 +1,4 @@
-package sdkopen_websocket_model
+package sdkopen_websocket
 
 import (
 	"github.com/gorilla/websocket"

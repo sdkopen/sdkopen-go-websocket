@@ -1,0 +1,4 @@
+github.com/gorilla/websocket v1.5.3 h1:saDtZ6Pbx/0u+bgYQ3q96pZgCzfhKXGPqt7kZ72aNNg=
+github.com/gorilla/websocket v1.5.3/go.mod h1:YR8l580nyteQvAITg2hZ9XVh4b55+EU/adAjf1fMHhE=
+github.com/sdkopen/sdkopen-go-webbase v1.0.5 h1:XWEjrzmXqgj1Ts/pA4FzVXe75PKCRc9FbFv/naLBu/Y=
+github.com/sdkopen/sdkopen-go-webbase v1.0.5/go.mod h1:s9OnpyVKaQNrsu+Dnu/rvGusHDZmRIwcWVTbZo8N6t4=

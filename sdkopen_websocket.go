@@ -13,6 +13,7 @@ var (
 
 func RegisterWebSocketEvent(event Event) {
 	WebSocketEvents = append(WebSocketEvents, event)
+	logging.Info("Registered websocket event: %v", event.Type)
 }
 
 func Broadcast(msg EventMessage, exclude *websocket.Conn) {

@@ -45,11 +45,6 @@ func (cc *webSocketController) Connect(ctx server.WebContext) {
 }
 
 func reader(conn *websocket.Conn) {
-	defer func() {
-		delete(Clients, conn)
-		conn.Close()
-	}()
-
 	var message EventMessage
 	err := conn.ReadJSON(&message)
 	if err != nil {

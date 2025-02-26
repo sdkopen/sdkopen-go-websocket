@@ -8,26 +8,24 @@ import (
 	"net/http"
 )
 
-var Clients = make(map[*websocket.Conn]string)
-
 var webSocketUpgGrader = websocket.Upgrader{
 	CheckOrigin: func(r *http.Request) bool {
 		return true
 	},
 }
 
-type WebSocketController struct {
+type webSocketController struct {
 }
 
 type Response struct {
 	Message string `json:"message"`
 }
 
-func NewWebSocketController() *WebSocketController {
-	return &WebSocketController{}
+func newWebSocketController() *webSocketController {
+	return &webSocketController{}
 }
 
-func (cc *WebSocketController) Routes() []server.Route {
+func (cc *webSocketController) Routes() []server.Route {
 	return []server.Route{
 		{
 			URI:      "ws",
@@ -38,7 +36,7 @@ func (cc *WebSocketController) Routes() []server.Route {
 	}
 }
 
-func (cc *WebSocketController) Connect(ctx server.WebContext) {
+func (cc *webSocketController) Connect(ctx server.WebContext) {
 	ws, err := webSocketUpgGrader.Upgrade(ctx.Response(), ctx.Request(), nil)
 	if err != nil {
 		logging.Error("Error upgrading connection: %v", err)

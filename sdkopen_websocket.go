@@ -8,6 +8,7 @@ import (
 
 var (
 	WebSocketEvents []Event
+	Clients         = make(map[*websocket.Conn]string)
 )
 
 func RegisterWebSocketEvent(event Event) {
@@ -26,5 +27,5 @@ func Broadcast(msg EventMessage, exclude *websocket.Conn) {
 }
 
 func Initialize() {
-	server.RegisterController(NewWebSocketController())
+	server.RegisterController(newWebSocketController())
 }
